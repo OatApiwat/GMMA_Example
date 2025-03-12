@@ -200,6 +200,7 @@ void MicMMS::Network_Task(void *pvParam)
     {
       instance->reconnect();
     }
+    Serial.printf("Network_Task Stack:%d\n",uxTaskGetStackHighWaterMark(NULL));
     vTaskDelay(pdMS_TO_TICKS(itr_network)); // loop get value every 5 sec
   }
 }
